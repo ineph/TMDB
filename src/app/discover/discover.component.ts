@@ -8,7 +8,6 @@ import { EndpointService } from '../shared/services/endpoints.service';
 })
 export class DiscoverComponent implements OnInit {
 
-  result;
   mediaObjects = [];
   mediaType = 'movie';
   page = 1;
@@ -20,12 +19,16 @@ export class DiscoverComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  discover(mediaType) {
+  discoverMedia(mediaType, page) {
     this.mediaType = mediaType
-    this.endpoint.discover(mediaType, this.page).subscribe(res => {
+    this.endpoint.discover(mediaType, page).subscribe(res => {
       this.mediaObjects = res.results
       console.log(res)
     })
+  }
+
+  changePage(pageNumber){
+    this.discoverMedia(this.mediaType,pageNumber)
   }
 
 }

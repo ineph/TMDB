@@ -1,8 +1,8 @@
 <div *ngIf='mediaType == "tv"'>
-    <button (click)="discover('movie')">Discover Movies</button>
+    <button (click)="discoverMedia('movie', page)">Discover Movies</button>
 </div>
 <div *ngIf='mediaType == "movie"'>
-    <button (click)="discover('tv')">Discover TV Series</button>
+    <button (click)="discoverMedia('tv', page)">Discover TV Series</button>
 </div>
 
 <div *ngIf='mediaType == "tv"'>
@@ -19,4 +19,3 @@
         <img [src]="'https://image.tmdb.org/t/p/w500' + media.backdrop_path" alt="">
     </li>
 </ul>
-
