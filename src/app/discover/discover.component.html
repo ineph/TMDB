@@ -1,0 +1,22 @@
+<div *ngIf='mediaType == "tv"'>
+    <button (click)="discover('movie')">Discover Movies</button>
+</div>
+<div *ngIf='mediaType == "movie"'>
+    <button (click)="discover('tv')">Discover TV Series</button>
+</div>
+
+<div *ngIf='mediaType == "tv"'>
+    <h1>Tv Series</h1>
+</div>
+<div *ngIf='mediaType == "movie"'>
+    <h1>Movies</h1>
+</div>
+
+<ul>
+    <li *ngFor='let media of mediaObjects'>
+        <div *ngIf='media.title'>{{media.title}}<br></div>
+        <div *ngIf='media.name'>{{media.name}}<br></div>
+        <img [src]="'https://image.tmdb.org/t/p/w500' + media.backdrop_path" alt="">
+    </li>
+</ul>
+
