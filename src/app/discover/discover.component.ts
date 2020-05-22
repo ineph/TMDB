@@ -10,10 +10,14 @@ export class DiscoverComponent implements OnInit {
 
   mediaObjects = [];
   mediaType = 'movie';
-  page = 1;
+  currentPage = 1;
+  pagination = [];
 
   constructor(private endpoint: EndpointService) {
-    this.endpoint.discover('movie', this.page).subscribe(res => this.mediaObjects = res.results)
+    this.endpoint.discover('movie', this.currentPage).subscribe(res => {
+      this.mediaObjects = res.results;
+      this.currentPage = res.page
+    })
    }
 
   ngOnInit(): void {
@@ -22,13 +26,14 @@ export class DiscoverComponent implements OnInit {
   discoverMedia(mediaType, page) {
     this.mediaType = mediaType
     this.endpoint.discover(mediaType, page).subscribe(res => {
-      this.mediaObjects = res.results
-      console.log(res)
+      this.mediaObjects = res.results;
+      this.currentPage = res.page
+      console.log(res);
     })
   }
 
   changePage(pageNumber){
-    this.discoverMedia(this.mediaType,pageNumber)
+    this.discoverMedia(this.mediaType, pageNumber)  
   }
 
 }
