@@ -1,43 +1,3 @@
-<!-- <ul>
-    <li class="pagination-list"
-        *ngFor="let page of pagination | keyvalue">
-        <div *ngIf="page.key">
-             <a (click)="changePage(page.value)" >{{page.key}}:{{page.value}}</a>
-        </div>
-    </li>
-</ul> -->
-
-
-<div>
-    <div *ngIf="currentPage != 1">
-        <a (click)="changePage(1)">
-            first:1
-        </a>
-    </div>
-    <div *ngIf="currentPage != 1">
-        <a (click)="changePage(currentPage - 1)">
-            previous:{{(currentPage) - 1}}
-        </a> 
-    </div>
-    <div>
-        current:{{currentPage}}
-    </div>
-    <div *ngIf="currentPage != 500">
-        <a (click)="changePage(currentPage + 1)">
-            next:{{currentPage + 1}}
-        </a>
-    </div>
-    <div *ngIf="currentPage != 500">
-        <a (click)="changePage(500)">
-            last:500
-        </a>
-    </div>
-</div>
-
-
-
-
-
 <div *ngIf='mediaType == "tv"'>
     <button (click)="discoverMedia('movie', 1)">Discover Movies</button>
 </div>
@@ -60,3 +20,22 @@
     </li>
 </ul>
 
+<div>
+    <div *ngIf="currentPage >= 5">
+        <button (click)="changePage(1)">
+            first
+        </button>
+    </div>
+    <li *ngFor="let page of pagination; let i = index">
+        <div *ngIf="page > 0 && page <= 500" >
+            <button (click)="changePage(page)">
+            {{page}}
+            </button>
+        </div>
+    </li>
+    <div *ngIf="currentPage <= 496">
+        <button (click)="changePage(500)">
+            last
+        </button>
+    </div>
+</div>

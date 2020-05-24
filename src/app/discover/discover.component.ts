@@ -11,7 +11,7 @@ export class DiscoverComponent implements OnInit {
   mediaObjects = [];
   mediaType = 'movie';
   currentPage = 1;
-  pagination = [];
+  pagination = [0, 0, 0, 0, 1, 2 ,3];
 
   constructor(private endpoint: EndpointService) {
     this.endpoint.discover('movie', this.currentPage).subscribe(res => {
@@ -28,12 +28,21 @@ export class DiscoverComponent implements OnInit {
     this.endpoint.discover(mediaType, page).subscribe(res => {
       this.mediaObjects = res.results;
       this.currentPage = res.page
-      console.log(res);
+      // console.log(res);
     })
   }
 
   changePage(pageNumber){
-    this.discoverMedia(this.mediaType, pageNumber)  
+    this.discoverMedia(this.mediaType, pageNumber)
+    this.currentPage = pageNumber
+    this.pagination[0] = pageNumber - 3
+    this.pagination[1] = pageNumber - 2
+    this.pagination[2] = pageNumber - 1
+    this.pagination[3] = pageNumber
+    this.pagination[4] = pageNumber + 1
+    this.pagination[5] = pageNumber + 2
+    this.pagination[6] = pageNumber + 3
+    console.log(this.pagination)
   }
 
 }
