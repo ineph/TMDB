@@ -1,41 +1,54 @@
-<div *ngIf='mediaType == "tv"'>
-    <button (click)="discoverMedia('movie', 1)">Discover Movies</button>
-</div>
-<div *ngIf='mediaType == "movie"'>
-    <button (click)="discoverMedia('tv', 1)">Discover TV Series</button>
-</div>
+<div id="container">
 
-<div *ngIf='mediaType == "tv"'>
-    <h1>Tv Series</h1>
-</div>
-<div *ngIf='mediaType == "movie"'>
-    <h1>Movies</h1>
-</div>
-
-<ul>
-    <li *ngFor='let media of mediaObjects'>
-        <div *ngIf='media.title'>{{media.title}}<br></div>
-        <div *ngIf='media.name'>{{media.name}}<br></div>
-        <img [src]="'https://image.tmdb.org/t/p/w500' + media.backdrop_path" alt="">
-    </li>
-</ul>
-
-<div>
-    <div *ngIf="currentPage >= 5">
-        <button (click)="changePage(1)">
-            first
-        </button>
+    <div *ngIf='mediaType == "tv"'>
+        <button type="button" class="btn btn-primary" (click)="discoverMedia('movie', 1)">Discover Movies</button>
     </div>
-    <li *ngFor="let page of pagination; let i = index">
-        <div *ngIf="page > 0 && page <= 500" >
-            <button (click)="changePage(page)">
-            {{page}}
-            </button>
+    <div *ngIf='mediaType == "movie"'>
+        <button type="button" class="btn btn-primary" (click)="discoverMedia('tv', 1)">Discover TV Series</button>
+    </div>
+    
+    <div *ngIf='mediaType == "tv"'>
+        <h1>Tv Series</h1>
+    </div>
+    <div *ngIf='mediaType == "movie"'>
+        <h1>Movies</h1>
+    </div>
+    
+    <ul>
+        <li *ngFor='let media of mediaObjects'>
+            <div *ngIf='media.title'>{{media.title}}<br></div>
+            <div *ngIf='media.name'>{{media.name}}<br></div>
+            <img [src]="'https://image.tmdb.org/t/p/w500' + media.backdrop_path" alt="">
+        </li>
+    </ul>
+    
+    <div class="pagination">
+        <div class="first" *ngIf="currentPage >= 5">
+            <a (click)="changePage(1)">
+                First
+            </a>
         </div>
-    </li>
-    <div *ngIf="currentPage <= 496">
-        <button (click)="changePage(500)">
-            last
-        </button>
+        <div class="previous" *ngIf="currentPage > 1">
+            <a (click)="changePage(currentPage - 1)">
+                Previous
+            </a>
+        </div>
+        <li class="pages-numbers" *ngFor="let page of pagination; let i = index">
+            <div *ngIf="page > 0 && page <= 500" >
+                <a (click)="changePage(page)">
+                    {{page}}
+                </a>
+            </div>
+        </li>
+        <div class="next" *ngIf="currentPage < 500">
+            <a (click)="changePage(currentPage + 1)">
+                Next
+            </a>
+        </div>
+        <div class="last" *ngIf="currentPage <= 496">
+            <a (click)="changePage(500)">
+                Last
+            </a>
+        </div>
     </div>
 </div>

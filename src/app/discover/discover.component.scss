@@ -1,3 +1,11 @@
-.pagination-list {
+.first, .previous, .pages-numbers, .next, .last  {
+    float: left;
     list-style: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    :hover{
+        text-decoration: underline;
+        color: red;
+    }
 }

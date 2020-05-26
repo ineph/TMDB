@@ -28,7 +28,6 @@ export class DiscoverComponent implements OnInit {
     this.endpoint.discover(mediaType, page).subscribe(res => {
       this.mediaObjects = res.results;
       this.currentPage = res.page
-      // console.log(res);
     })
   }
 
@@ -42,7 +41,6 @@ export class DiscoverComponent implements OnInit {
     this.pagination[4] = pageNumber + 1
     this.pagination[5] = pageNumber + 2
     this.pagination[6] = pageNumber + 3
-    console.log(this.pagination)
   }
 
 }
