@@ -28,10 +28,11 @@ export class DiscoverComponent implements OnInit {
     this.endpoints.discoverMedia(mediaType, page).subscribe(res => {
       console.log(this.mediaObjects = res.results);
       this.currentPage = res.page;
-    })
+    });
   }
 
   changePage(pageNumber){
+    window.scroll(0,0);
     this.discoverMedia(this.mediaType, pageNumber);
     this.currentPage = pageNumber;
 
