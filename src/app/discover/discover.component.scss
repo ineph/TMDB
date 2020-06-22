@@ -1,6 +1,11 @@
 #media {
     list-style: none;
     margin-bottom: 5em;
+    color: green;
+}
+
+#media .a:hover {
+    text-decoration: none;
 }
 
 .title-year {
@@ -15,7 +20,6 @@
     margin-right: 10px;
     cursor: pointer;
     :hover{
-        text-decoration: underline;
         color: red;
     }
 }

@@ -49,36 +49,37 @@
                     <img [src]="'https://image.tmdb.org/t/p/w500' + media.backdrop_path" alt="">
                 </li>
             </ul>
+
         </div>
 
         <!-- ############################# -- PAGINATION -- ############################# -->
         <div class="pagination">
             <div class="first" *ngIf="currentPage >= 5">
-                <a (click)="changePage(1)">
+                <button class="btn" (click)="changePage(1)">
                     First
-                </a>
+                </button>
             </div>
             <div class="previous" *ngIf="currentPage > 1">
-                <a (click)="changePage(currentPage - 1)">
+                <button class=btn (click)="changePage(currentPage - 1)">
                     Previous
-                </a>
+                </button>
             </div>
             <li class="pages-numbers" *ngFor="let page of pagination; let i = index">
                 <div *ngIf="page > 0 && page <= 500">
-                    <a (click)="changePage(page)">
+                    <button class="btn" (click)="changePage(page)">
                         {{page}}
-                    </a>
+                    </button>
                 </div>
             </li>
             <div class="next" *ngIf="currentPage < 500">
-                <a (click)="changePage(currentPage + 1)">
+                <button class="btn" (click)="changePage(currentPage + 1)">
                     Next
-                </a>
+                </button>
             </div>
             <div class="last" *ngIf="currentPage <= 496">
-                <a (click)="changePage(500)">
+                <button class="btn" (click)="changePage(500)">
                     Last
-                </a>
+                </button>
             </div>
         </div>
 
