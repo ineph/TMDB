@@ -1,6 +1,8 @@
 # TMDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Using the [API](https://developers.themoviedb.org/3/getting-started/introduction) of ["The Movie Database"](https://www.themoviedb.org/)
+
+Project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
 ## Development server
 
