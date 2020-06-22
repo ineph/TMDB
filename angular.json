@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IMDB": {
+    "TMDB": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/IMDB",
+            "outputPath": "dist/TMDB",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "IMDB:build"
+            "browserTarget": "TMDB:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "IMDB:build:production"
+              "browserTarget": "TMDB:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IMDB:build"
+            "browserTarget": "TMDB:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "IMDB:serve"
+            "devServerTarget": "TMDB:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "IMDB:serve:production"
+              "devServerTarget": "TMDB:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "IMDB"
+  "defaultProject": "TMDB"
 }

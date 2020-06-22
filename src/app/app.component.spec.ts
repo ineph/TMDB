@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'IMDB'`, () => {
+  it(`should have as title 'TMDB'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('IMDB');
+    expect(app.title).toEqual('TMDB');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('IMDB app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('TMDB app is running!');
   });
 });

@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('IMDB app is running!');
+    expect(page.getTitleText()).toEqual('TMDB app is running!');
   });
 
   afterEach(async () => {
