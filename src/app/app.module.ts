@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DiscoverComponent
+    DiscoverComponent,
+    MediaComponent
   ],
   imports: [
     BrowserModule,

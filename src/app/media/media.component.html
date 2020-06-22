@@ -1,0 +1,50 @@
+<div *ngIf="media">
+
+    <!-- #############################################################---MOVIE---############################################################# -->
+    <div *ngIf="mediaType == 'movie'">
+
+        <h1>
+            {{media.title}}
+        </h1>
+        {{media.tagline}}<br>
+        <img [src]="'https://image.tmdb.org/t/p/w500' + media.poster_path" [alt]="media.title + ' poster'"><br>
+        
+        <div>overview: {{media.overview}}</div>
+        <div>adult: {{media.adult}}​</div>
+        <div>budget: {{media.budget}}​</div>
+        <div>homepage: <a [href]="media.homepage">{{media.homepage}}</a></div>
+        <div>original language:{{media.original_language}}</div>
+        <div>original title: {{media.original_title}}</div>
+        <div>popularity: {{media.popularity}}</div>
+        <div>release date: {{media.release_date}}​</div>
+        <div>revenue: {{media.revenue}}</div>
+        <div>runtime: {{media.runtime}} minutes</div>
+        <div>status: {{media.status}}</div>
+        <div>vote average: {{media.vote_average}}</div>
+        <div>vote count: {{media.vote_count}}</div>
+    </div>
+
+    <!-- #############################################################---TV---############################################################# -->
+    <div *ngIf="mediaType == 'tv' ">
+
+        <h1>
+            {{media.name}}
+        </h1>
+        {{media.tagline}}<br>
+        <img [src]="'https://image.tmdb.org/t/p/w500' + media.poster_path" [alt]="media.name + ' poster'"><br>
+
+        <div>overview: {{media.overview}}</div>
+        <div>adult: {{media.adult}}</div>
+        <div>budget: {{media.budget}}​</div>
+        <div>homepage: <a [href]="media.homepage">{{media.homepage}}</a></div>
+        <div>original language:{{media.original_language}}</div>
+        <div>original name: {{media.original_name}}</div>
+        <div>popularity: {{media.popularity}}</div>
+        <div>release date: {{media.release_date}}</div>
+        <div>runtime: {{media.runtime}} minutes</div>
+        <div>status: {{media.status}}</div>
+        <div>vote average: {{media.vote_average}}</div>
+        <div>vote count: {{media.vote_count}}</div>
+
+    </div>
+</div>

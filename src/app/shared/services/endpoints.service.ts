@@ -13,8 +13,12 @@ export class EndpointService {
 
     constructor(private http: HttpClient){}
 
-    discover(mediaType, page){
+    discoverMedia(mediaType, page){
         return this.http.get<any>(`${environment.api}discover/${mediaType}`, {params: this.httpParams.set('page', page)});
+    }
+
+    getMediaById(mediaType, id){
+        return this.http.get<any>(`${environment.api}${mediaType}/${id}`, {params: this.httpParams});
     }
 
 }
